@@ -10,7 +10,7 @@
 
 ### - please note that the api is limited to 500 calls and 5 in a minute
 ### - using two api keys to help with this issue atm
-
+- if there was more api calls then the symbol search would update on type
 ## Project setup
 ```
 npm install

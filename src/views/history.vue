@@ -3,26 +3,31 @@
         <p>Enter stock symbol to see the history.</p>
 
         <div class="row">
-            <md-field class="symbolInput">
+            <md-field class="symbolInput" >
                 <label>Stock Symbol</label>
-                <md-input v-model="symbol" ></md-input>
+                <md-input v-model="symbol" v-on:keyup.enter="findStock"  ></md-input>
+                <!-- v-on:keyup="findStock" would use this but limited call to api -->
             </md-field>
             <md-button class="md-dense md-raised md-primary" id="getButton"  v-on:click="findStock">Find Stock</md-button>
 
         </div>
+       
+
         <md-list >
             <md-list-item v-for="symbol in symbols" v-bind:key="symbol.symbol"  v-on:click="selected(symbol)">
               <span class="md-list-item-text" >{{symbol.symbol}} - {{symbol.name}}</span>
             </md-list-item>
         </md-list>    
-
         <ErrorMessage v-if="error" :msg="error"/>
+
+        <h3  class="title" v-if="loaded">{{title}}</h3>
         <LineChart   v-if="loaded"
         :chartdata="chartdata"
         :options="options" />
         <div class="spinner">
             <md-progress-spinner  v-if="loading"  md-mode="indeterminate"></md-progress-spinner>
         </div>
+        <p  class="title" v-if="loaded">Click on color tags to filter graph.</p>
       
     </div>
       
@@ -42,6 +47,7 @@
             loaded: false, // for the graph
             loading:false,//for the spinner
             symbol:null,
+            title:null,
             symbols:[],
             chartdata: null,
             options:{
@@ -71,6 +77,7 @@
                 
             },
             selected:function(symbol){
+                this.title=symbol.symbol.toUpperCase() +'- '+symbol.name
                 this.symbol=symbol.symbol
                 this.symbols=[]
                 this.getStock()
@@ -84,6 +91,7 @@
                 axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&&symbol='+this.symbol.toUpperCase()+'&apikey=6NQ84CAJ1T1RHQC4')
                 .then(response => {
                     this.loading=false; 
+                    
                     // organizing the data to work properly with the chart 
                     this.chartdata = {
                         labels: Object.keys(response.data["Time Series (Daily)"]),
@@ -141,6 +149,9 @@
     }
     .container{
         margin:35px;
+    }
+    .title{
+        text-align: center;
     }
     .spinner{
         margin: auto;

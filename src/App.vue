@@ -28,7 +28,11 @@
               }
           }
       },
-    
+      mounted() {
+          if(!this.authenticated) {
+              this.$router.replace({ name: "login" });
+          }
+      },
       methods: {
           setAuthenticated(status) {
               this.authenticated = status;
