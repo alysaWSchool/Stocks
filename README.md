@@ -7,8 +7,6 @@
 - username: mcap
 - password: password
 
-
-
 ## Project setup
 ```
 npm install
