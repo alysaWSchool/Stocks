@@ -28,11 +28,7 @@
               }
           }
       },
-      mounted() {
-          if(!this.authenticated) {
-              this.$router.replace({ name: "login" });
-          }
-      },
+    
       methods: {
           setAuthenticated(status) {
               this.authenticated = status;
@@ -45,13 +41,7 @@
 </script>
 
 <style>
-  /* body {
-      background-color: white;
-  }
-  h1 {
-      padding: 0;
-      margin-top: 0;
-  } */
+ 
   #nav{
     background:#1d267f;
     display:flex;

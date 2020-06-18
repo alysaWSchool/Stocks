@@ -5,21 +5,18 @@
         <div class="row">
             <md-field class="symbolInput">
                 <label>Stock Symbol</label>
-                <!-- @keyup.enter="getStock"  -->
                 <md-input v-model="symbol" ></md-input>
             </md-field>
-            <!--  -->
             <md-button class="md-dense md-raised md-primary" id="getButton"  v-on:click="findStock">Find Stock</md-button>
 
         </div>
-        <md-list id="suggestions">
+        <md-list >
             <md-list-item v-for="symbol in symbols" v-bind:key="symbol.symbol"  v-on:click="selected(symbol)">
               <span class="md-list-item-text" >{{symbol.symbol}} - {{symbol.name}}</span>
             </md-list-item>
         </md-list>    
 
         <ErrorMessage v-if="error" :msg="error"/>
-        <!-- <p v-if="loaded">Can filter out by click the options below. </p> -->
         <LineChart   v-if="loaded"
         :chartdata="chartdata"
         :options="options" />
@@ -37,9 +34,6 @@
     import axios from 'axios';
     export default {
         name: 'History',
-        props: {
-            // msg: String
-        },
         components: {
             LineChart,
             ErrorMessage
@@ -144,9 +138,6 @@
     }
     .symbolInput{
         width:100px;
-    }
-    #suggestions{
-        /* width:400px; */
     }
     .container{
         margin:35px;

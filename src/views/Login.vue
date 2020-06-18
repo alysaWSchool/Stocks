@@ -74,7 +74,6 @@
 
     }
     .container{
-        /* background:#717173; */
         padding-top:10%;
         height:100vh;
         background-image: url("../assets/bg.jpg");
