@@ -54,11 +54,11 @@
                if (!this.symbol) {this.error='Please enter a symbol.'; return}
                this.loading=true; 
                this.loaded = false;
-                // MSFT
+                // test example symbol: MSFT
                 axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&&symbol='+this.symbol.toUpperCase()+'&apikey=6NQ84CAJ1T1RHQC4')
             .then(response => {
                 this.loading=false; 
-               
+                // organizing the data to work properly with the chart 
                 this.chartdata = {
                     labels: Object.keys(response.data["Time Series (Daily)"]),
                     datasets: [
