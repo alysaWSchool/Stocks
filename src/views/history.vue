@@ -55,7 +55,8 @@
                this.loading=true; 
                this.loaded = false;
                 // test example symbol: MSFT
-                axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&&symbol='+this.symbol.toUpperCase()+'&apikey=6NQ84CAJ1T1RHQC4')
+                // old apikey just in case:6NQ84CAJ1T1RHQC4
+                axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&&symbol='+this.symbol.toUpperCase()+'&apikey=CMMPXHOBU2RVG7TV')
             .then(response => {
                 this.loading=false; 
                 // organizing the data to work properly with the chart 

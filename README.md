@@ -3,6 +3,12 @@
 # Date June 18th, 2020
 # Purpose: To find the histiroy of Stock  in graph form
 
+#### Login credentials
+- username: mcap
+- password: password
+
+
+
 ## Project setup
 ```
 npm install
