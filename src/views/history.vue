@@ -13,7 +13,7 @@
 
         </div>
         <md-list id="suggestions">
-            <md-list-item v-for="symbol in symbols" v-bind:key="symbol"  v-on:click="selected(symbol)">
+            <md-list-item v-for="symbol in symbols" v-bind:key="symbol.symbol"  v-on:click="selected(symbol)">
               <span class="md-list-item-text" >{{symbol.symbol}} - {{symbol.name}}</span>
             </md-list-item>
         </md-list>    

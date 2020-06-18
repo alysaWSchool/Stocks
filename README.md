@@ -8,8 +8,8 @@
 - password: password
 
 
-# please note that the api is limited to 500 calls and 5 in a minute
-# using two api keys to help with this issue atm
+### - please note that the api is limited to 500 calls and 5 in a minute
+### - using two api keys to help with this issue atm
 
 ## Project setup
 ```
@@ -20,7 +20,7 @@ npm install
 ```
 npm run serve
 ```
-
+- then go to http://localhost:8080/Stocks
 ### Compiles and minifies for production
 ```
 npm run build
