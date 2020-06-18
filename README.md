@@ -1,4 +1,7 @@
-# hello-world
+# Stock History
+# Created by: Alysa Woodhouse
+# Date June 18th, 2020
+# Purpose: To find the histiroy of Stock  in graph form
 
 ## Project setup
 ```
