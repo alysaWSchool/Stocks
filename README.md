@@ -7,6 +7,10 @@
 - username: mcap
 - password: password
 
+
+# please note that the api is limited to 500 calls and 5 in a minute
+# using two api keys to help with this issue atm
+
 ## Project setup
 ```
 npm install

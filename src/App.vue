@@ -2,7 +2,7 @@
 
 
 <template>
-  <div >
+  <div id="app">
      
         <div id="nav" v-if="authenticated" >
           <h3>Stock History</h3>
