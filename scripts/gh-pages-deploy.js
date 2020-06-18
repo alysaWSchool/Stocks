@@ -3,7 +3,11 @@ const fs = require("fs");
 
 (async () => {
     try {
+<<<<<<< Updated upstream
       await execa("git", ["checkout",  "gh-pages"]);
+=======
+      await execa("git", ["checkout", "--orphan", "gh-pages"]);
+>>>>>>> Stashed changes
       console.log("Building...");
       await execa("npm", ["run", "build"]);
       // Understand if it's dist or build folder
